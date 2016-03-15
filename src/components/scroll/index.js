@@ -5,13 +5,11 @@ var extend = require('xtend')
 var sheet = sf('./index.css')
 
 exports.render = function render (options, content) {
-  var scrollOptions = extend({
+  options = extend({
     'ev-touchstart': onTouchStart
   }, options || {})
 
-  return h('div', {className: sheet}, [
-    h('div.scroll', scrollOptions, content)
-  ])
+  return h('scroll.' + sheet, options, content)
 }
 
 // If a scroll starts right at the beginning or end of an overflow container on ios,

@@ -42,6 +42,7 @@ Navbar.render = function render (state, options) {
     alignItems: 'center',
     position: 'relative',
     height: '40px',
+    flexShrink: 0,
     marginTop: window.cordova ? '20px' : '',
     borderBottom: '1px solid #eee',
     overflow: 'hidden'

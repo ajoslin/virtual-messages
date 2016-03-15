@@ -8,16 +8,3 @@ body {
   overflow: hidden;
   font-family: Helvetica Neue;
 }
-
-@keyframes page-in {
-  from {
-    transform: translate3d(100%,0,0);
-  }
-  to {
-    transform: translate3d(0,0,0);
-  }
-}
-
-* {
-  user-select: none;
-}

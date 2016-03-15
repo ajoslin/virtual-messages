@@ -1,7 +1,21 @@
 :host {
-  animation: page-in 350ms;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-.message {
+message {
   padding: 8px;
+  background: #eee;
+  margin: 8px;
+  display: block;
+  max-width: 50%;
+  border-radius: 6px;
+}
+
+message.me {
+  align-self: flex-end;
+  background: #0679F0;
+  color: white;
+  float: right;
 }

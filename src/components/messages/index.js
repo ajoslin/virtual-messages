@@ -36,8 +36,8 @@ Messages.get = function get (state, id) {
   })
 }
 
-Messages.render = function render (state) {
-  return Scroll.render({className: sheet}, state.list.map(renderMessage))
+Messages.render = function render (state, style) {
+  return Scroll.render({className: sheet, style: style}, state.list.map(renderMessage))
 
   function renderMessage (conversation) {
     var message = last(conversation.messages)

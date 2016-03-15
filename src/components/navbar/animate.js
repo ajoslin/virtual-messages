@@ -1,15 +1,17 @@
 var Tween = require('micro-tween')
 var Store = require('weakmap-shim/create-store')
-var ease = require('micro-tween/ease/cubicInOut')
+var ease = require('micro-tween/ease/cubicOut')
 
 var Animations = Store()
 var duration = 350
+
+function noop () {}
 
 module.exports = animate
 
 animate.finish = finish
 
-function animate (navGroup, options) {
+function animate (navGroup, options, callback) {
   if (!navGroup) return
 
   var animation = Animations(navGroup).data = tween()
@@ -22,6 +24,7 @@ function animate (navGroup, options) {
       .ease(ease)
       .onStart(update)
       .onUpdate(update)
+      .onComplete(callback || noop)
       .start()
 
     function update (data) {

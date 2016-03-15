@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "ap": "^0.2.0",
+    "append-hook": "^1.0.1",
     "array-find": "^1.0.0",
     "array-last": "^1.1.1",
     "cast-array": "^1.0.1",
