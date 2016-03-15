@@ -44,6 +44,7 @@
     "brfs": "^1.4.3",
     "browserify": "^13.0.0",
     "budo": "^8.1.0",
+    "css-extract": "~1.0.0",
     "sheetify": "^5.0.0",
     "uglifyify": "^3.0.1"
   }
