@@ -1,0 +1,7 @@
+:host {
+  animation: page-in 350ms;
+}
+
+.message {
+  padding: 8px;
+}
