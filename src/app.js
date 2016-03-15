@@ -24,10 +24,7 @@ function App (data) {
     index: Observ(-1)
   })
 
-  window.push = function () {
-    App.push(state, Messages, 'messages')
-  }
-  push()
+  App.push(state, Messages, 'messages')
 
   // Because we don't have a stack-based mobile router, we'll fake it for now.
   Messages.onMessage(state.messages, function (conversation) {

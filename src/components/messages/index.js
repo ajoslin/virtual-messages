@@ -16,7 +16,7 @@ function Messages (data) {
   data = data || {}
 
   return State({
-    list: Observ(data.list || []),
+    list: Observ(data.list || require('../../messages.json')),
     channels: {
       click: click
     }
