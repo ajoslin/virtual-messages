@@ -30,12 +30,6 @@ function click (state, conversation) {
   MessageEvent.broadcast(state, conversation)
 }
 
-Messages.get = function get (state, id) {
-  return find(state.list(), function (conversation) {
-    return conversation.id === id
-  })
-}
-
 Messages.render = function render (state, style) {
   return Scroll.render({className: sheet, style: style}, state.list.map(renderMessage))
 
