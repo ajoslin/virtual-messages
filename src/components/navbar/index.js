@@ -42,6 +42,7 @@ Navbar.render = function render (state, options) {
     alignItems: 'center',
     position: 'relative',
     height: '40px',
+    marginTop: '20px',
     borderBottom: '1px solid #eee',
     overflow: 'hidden'
   }

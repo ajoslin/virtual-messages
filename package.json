@@ -3,7 +3,7 @@
   "name": "virtual-messages",
   "scripts": {
     "open": "budo ./init.js --serve bundle.js --pushstate -- -p [ css-extract -o bundle.css ] -d -r ./init.js:app",
-    "build": "browserify ./init.js -p [ css-extract -o dist/bundle.css ] -g uglifyify -o dist/bundle.js && cp index.html dist",
+    "build": "browserify ./init.js -p [ css-extract -o dist/bundle.css ] -o dist/bundle.js && cp index.html dist",
     "postinstall": "mkdir -p dist"
   },
   "browserify": {
@@ -35,7 +35,6 @@
     "observ-clamp": "^1.0.1",
     "reset.css": "^2.0.2",
     "sheetify-cssnext": "^1.0.7",
-    "sour": "^2.2.3",
     "update-struct": "^1.1.1",
     "value-event": "^5.1.0",
     "virtual-dom": "^2.1.1",

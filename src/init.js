@@ -9,7 +9,7 @@ var raf = require('raf')
 var Tween = require('micro-tween')
 
 var messages = require('./messages.json')
-var App = require('./components/app')
+var App = require('./app')
 
 module.exports = function init () {
   sf('reset.css', {global: true})
@@ -23,16 +23,32 @@ module.exports = function init () {
     messages: messages
   })
   var loop = mainLoop(state(), App.render, vdom)
-  var root = document.getElementById('app')
 
-  root.appendChild(loop.target)
+  document.body.appendChild(loop.target)
 
   state(loop.update)
 
   return state
 }
 
+document.addEventListener('deviceready', function () {
+  window.StatusBar.styleDefault()
+})
+
 function tick () {
   Tween.update()
   raf(tick)
+}
+
+function iosScrollFix () {
+  document.body.addEventListener('touchstart', function (event) {
+    var scroll = getScrollable (event)
+    if (!scroll) return
+
+    if (scroll.scrollTop === 0) {
+      scroll.scrollTop = 1
+    } else if (scroll.scrollHeight === scroll.scrollTop + scroll.offsetHeight) {
+      scroll.scrollTop -= 1;
+    }
+  })
 }
