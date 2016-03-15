@@ -42,7 +42,7 @@ Navbar.render = function render (state, options) {
     alignItems: 'center',
     position: 'relative',
     height: '40px',
-    borderBottom: '1px solid black',
+    borderBottom: '1px solid #eee',
     overflow: 'hidden'
   }
   var current = state.stack[state.index]
