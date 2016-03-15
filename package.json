@@ -2,7 +2,9 @@
   "version": "0.0.0",
   "name": "virtual-messages",
   "scripts": {
-    "open": "budo ./init.js --serve bundle.js --pushstate -- -p [ css-extract -o bundle.css ] -d -r ./init.js:app"
+    "open": "budo ./init.js --serve bundle.js --pushstate -- -p [ css-extract -o bundle.css ] -d -r ./init.js:app",
+    "build": "browserify ./init.js -p [ css-extract -o dist/bundle.css ] -g uglifyify -o dist/bundle.js && cp index.html dist",
+    "postinstall": "mkdir -p dist"
   },
   "browserify": {
     "transform": [
@@ -43,6 +45,7 @@
     "brfs": "^1.4.3",
     "browserify": "^13.0.0",
     "budo": "^8.1.0",
-    "sheetify": "^5.0.0"
+    "sheetify": "^5.0.0",
+    "uglifyify": "^3.0.1"
   }
 }
