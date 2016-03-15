@@ -45,9 +45,7 @@ Messages.render = function render (state) {
     return h('conversation', {
       'ev-click': clickEvent(state.channels.click, conversation)
     }, [
-      h('img', {
-        src: conversation.with.photo
-      }),
+      h('img', {src: conversation.with.photo}),
       h('container', [
         h('top', [
           h('name', conversation.with.firstName + ' ' + conversation.with.lastName),

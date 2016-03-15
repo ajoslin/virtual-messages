@@ -22,8 +22,7 @@ function App (data) {
     mode: Observ('messages')
   })
 
-  // Because we don't have a stack-based mobile router,
-  // We'll just fake it.
+  // Because we don't have a stack-based mobile router, we'll fake it for now.
   Messages.onMessage(state.messages, function (conversation) {
     state.mode.set('conversation')
     state.chat.conversation.set(conversation)

@@ -14,8 +14,9 @@ exports.render = function render (options, content) {
   ])
 }
 
-// If a scroll starts right at the beginning or end of an overflow container,
+// If a scroll starts right at the beginning or end of an overflow container on ios,
 // it will actually scroll the body!
+//
 // The age old fix is to make all scrolls start at 1 from the top or bottom boundary
 function onTouchStart (event) {
   var element = event.currentTarget

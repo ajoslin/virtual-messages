@@ -19,11 +19,8 @@ module.exports = function init () {
   Delegator()
   tick()
 
-  var state = App({
-    messages: messages
-  })
+  var state = App({messages: messages})
   var loop = mainLoop(state(), App.render, vdom)
-
   document.body.appendChild(loop.target)
 
   state(loop.update)
@@ -38,17 +35,4 @@ document.addEventListener('deviceready', function () {
 function tick () {
   Tween.update()
   raf(tick)
-}
-
-function iosScrollFix () {
-  document.body.addEventListener('touchstart', function (event) {
-    var scroll = getScrollable (event)
-    if (!scroll) return
-
-    if (scroll.scrollTop === 0) {
-      scroll.scrollTop = 1
-    } else if (scroll.scrollHeight === scroll.scrollTop + scroll.offsetHeight) {
-      scroll.scrollTop -= 1;
-    }
-  })
 }
