@@ -1,6 +1,5 @@
 var State = require('dover')
 var h = require('virtual-dom/h')
-var partial = require('ap').partial
 var Observ = require('observ')
 var sf = require('sheetify')
 

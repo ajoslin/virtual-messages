@@ -1,7 +1,6 @@
 var State = require('dover')
 var Observ = require('observ')
 var ObservClamp = require('observ-clamp')
-var array = require('cast-array')
 var h = require('virtual-dom/h')
 var clickEvent = require('value-event/click')
 var Event = require('weakmap-event')

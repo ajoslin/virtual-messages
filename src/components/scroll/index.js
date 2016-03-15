@@ -23,7 +23,7 @@ function onTouchStart (event) {
   var scrollTop = element.scrollTop
 
   if (scrollTop === 0) {
-    element.scrollTop  = 1
+    element.scrollTop = 1
   } else if (scrollTop + element.offsetHeight === element.scrollHeight) {
     element.scrollTop -= 1
   }

@@ -23,9 +23,9 @@ function Navbar (data) {
   var state = State({
     stack: List(data.stack.map(Group)),
     back: Observ(data.back ? '<' : null),
-    index: Observ(('index' in data) ? data.index : data.stack.length - 1),
+    index: Observ(data.index > -1 ? data.index : data.stack.length - 1),
     // Pointer to the previous group, aka the one animating out. This is not present in the stack.
-    previous: Group(Group.EMPTY),
+    previous: Group(Group.EMPTY)
   })
 
   Group.onBack.toArray(state.stack, partial(BackEvent.broadcast, state))
