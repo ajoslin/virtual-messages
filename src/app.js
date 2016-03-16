@@ -47,8 +47,7 @@ App.render = function render (state) {
     Navbar.render(state.navbar),
     h('div.app-container', state.stack.map(function (data, index) {
       return data.Component.render(state[data.key], {
-        transform: 'translate3d(' + data.position + '%,0,0)',
-        display: (data.position === -100 || data.position === 100) ? 'none' : ''
+        transform: 'translate3d(' + data.position + '%,0,0)'
       })
     }))
   ])
@@ -59,15 +58,15 @@ App.push = function push (state, Component, key) {
   var current = state.stack.get(state.index())
   var next = Struct({
     Component: Observ(Component),
-    position: Observ(100),
+    position: Observ(0),
     key: Observ(key)
   })
 
   var length = state.stack.push(next)
   state.index.set(length - 1)
 
-  require('./components/navbar/animate')(next, {from: 100, to: 0})
   if (current) {
+    require('./components/navbar/animate')(next, {from: 100, to: 0})
     require('./components/navbar/animate')(current, {from: 0, to: -100})
   }
 }
