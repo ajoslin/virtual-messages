@@ -23,7 +23,7 @@ Chat.render = function render (state, style) {
 
   return Scroll.render({
     className: sheet,
-    style: extend(style, {left:0,top:0,bottom:0,right:0,position:'absolute'}),
+    style: extend(style),
     append: AppendHook(scrollBottom)
   }, [
     state.conversation.messages.map(function (message) {

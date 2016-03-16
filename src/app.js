@@ -2,7 +2,6 @@ var State = require('dover')
 var h = require('virtual-dom/h')
 var Observ = require('observ')
 var sf = require('sheetify')
-var partial = require('ap').partial
 var List = require('observ-array')
 
 var Navbar = require('./components/navbar')
