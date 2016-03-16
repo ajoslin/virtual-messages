@@ -8,3 +8,15 @@ body {
   overflow: hidden;
   font-family: Helvetica Neue;
 }
+
+button {
+  button: relative;
+}
+button:after {
+  content: '';
+  position: absolute;
+  left: -8px;
+  right: -8px;
+  top: -8px;
+  bottom: -8px;
+}

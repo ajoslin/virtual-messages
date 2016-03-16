@@ -11,6 +11,7 @@ message {
   display: block;
   max-width: 50%;
   border-radius: 6px;
+  flex-shrink: 0;
 }
 
 message.me {
