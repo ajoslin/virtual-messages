@@ -52,6 +52,9 @@ App.render = function render (state) {
   ])
 }
 
+// This belongs in its own file, obviously.
+// Additionally, it shares a whole lot with navGroup. Can build one History that
+// both navbar and views use
 var Struct = require('observ-struct')
 App.push = function push (state, Component, key) {
   var current = state.stack.get(state.index())
